@@ -8,8 +8,7 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-const {routeMiddlewareQueryString ,randomError} = require('./middleware/middleware')
-
+const {routeMiddlewareQueryString,randomError, errorHandler} = require('./middleware/middleware')
 
 
 app.listen(PORT, () => {
@@ -25,6 +24,7 @@ let numArray = [];
 app.post('/number/:number', async (req, res) => {
     try {
         const number = req.params.number;
+
         numArray.push(number);
         console.log(numArray);
         res.status(200).json({ msg: `${number} saved.` })
@@ -33,7 +33,7 @@ app.post('/number/:number', async (req, res) => {
     }
 });
 
-app.get('/number/:number', routeMiddlewareQueryString, async (req, res) => {
+app.get('/number/:number', async (req, res) => {
     try {
         const number = req.params.number;
         const selectedNumber = numArray.find(n => n == number)
@@ -45,6 +45,7 @@ app.get('/number/:number', routeMiddlewareQueryString, async (req, res) => {
     }
 });
 
-app.get('/error', randomError, async (req, res) => {
+app.get('/error', randomError, errorHandler, async (req, res) => {
     res.status(400).json({msg: "Something went wrong"})
 })
+
