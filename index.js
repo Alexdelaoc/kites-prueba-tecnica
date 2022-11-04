@@ -1,4 +1,3 @@
-//----------------------------------------------- 4
 //Escribe una api-rest con express que tenga dos rutas, una para subir un número y otra para obtener dicho número
 //Añadir un middleware que haga console.log() de la ruta total a) con querystrings b) sin querystrings
 //Crear y añadir un middleware que de manera aleatoria genere un error
@@ -9,9 +8,14 @@ const app = express();
 const PORT = 3000;
 
 
+
+// MIDDLEWARES //
+// Se podrían exportar a una posible carpeta de middlewares.
+
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
-})
+});
 
 app.get('/', async (req, res) => {
     console.log("Hello world!");
