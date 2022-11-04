@@ -28,6 +28,7 @@ app.post('/number/:number', async (req, res) => {
     try {
         const number = req.params.number;
 
+        // Pusheamos el número de los params al array.
         numArray.push(number);
         console.log(numArray);
         res.status(200).json({ msg: `${number} saved.` })
