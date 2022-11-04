@@ -1,0 +1,38 @@
+<html>
+
+<head></head>
+
+<body>
+    <div id="div_1" style="color: red;">
+    </div>
+    <div id="div_2" style="color: blue;">
+    </div>
+    <div id="div_3" style="color: green;">
+    </div>
+    <div id="div_4" style="color: black;">
+    </div>
+</body>
+<footer>
+    <script>
+        const poem = 'Las rosas son rojas, las violetas azules, todas son plantas, y los colores gandules.';
+
+        const divs = document.querySelectorAll("div")
+
+        let selectedDiv = 0
+
+        function changeColor() {
+            if (selectedDiv < divs.length) {
+                divs[selectedDiv - 1] ? divs[selectedDiv - 1].innerHTML = "" : "";
+                divs[selectedDiv].innerHTML = poem;
+                selectedDiv++;
+            } else {
+                clearInterval(myInterval);
+                divs[divs.length - 1].innerHTML = "";
+            };
+        };
+        let myInterval = setInterval(changeColor, 1000);
+        
+    </script>
+</footer>
+
+</html>
