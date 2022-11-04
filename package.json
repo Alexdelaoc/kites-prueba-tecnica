@@ -1,0 +1,22 @@
+{
+  "name": "kites-prueba-tecnica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexdelaoc/kites-prueba-tecnica.git"
+  },
+  "author": "Alejandro de la Orden Collado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexdelaoc/kites-prueba-tecnica/issues"
+  },
+  "homepage": "https://github.com/Alexdelaoc/kites-prueba-tecnica#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
