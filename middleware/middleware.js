@@ -1,7 +1,7 @@
 // MIDDLEWARES //
 const { CustomError } = require('../error.js')
 
-
+// No está hecho aún
 function routeMiddlewareQueryString(req, res, next){
 
     const routeNoQuery = req.route.path
