@@ -8,7 +8,7 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-const { routeMiddlewareQueryString,randomError, errorHandler } = require('./middleware/middleware')
+const { routeMiddlewareQueryString, randomError, errorHandler } = require('./middleware/middleware')
 
 
 app.listen(PORT, () => {
@@ -57,14 +57,13 @@ app.get('/number/:number', async (req, res) => {
     }
 });
 
-// Pendiente
-app.get('/routes', async (req, res) => {
-    res.status(200).json({
-        msg: "Hola desde /routes"
-    })
+app.get('/routes', routeMiddlewareQueryString, async (req, res) => {
+    res.status(200)
 })
 
 app.get('/error', randomError, errorHandler, async (req, res) => {
-    res.status(400).json({msg: "Something went wrong"})
+    res.status(400).json({
+        msg: "Something went wrong"
+    });
 })
 
